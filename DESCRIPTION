@@ -1,0 +1,20 @@
+Package: GoldilocksPackage
+Title: What the Package Does (One Line, Title Case)
+Version:0.0.0.9000
+Authors@R: person("gwynn", "sturdevant", "nzgwynn@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Author: gwynn sturdevant [aut, cre],
+Maintainer: gwynn sturdevant <nzgwynn@gmail.com>
+Description: The Goldilocks package implements the theoretical permentation
+    approach developed in this article is an interactive Shiny application. 
+    This package allows researchers to randomize cluster randomized trials with 
+    confidence by visualizing the distribution of average differences in the 
+    treatment and control arms in practice randomizations. The application also 
+    allows researchers to randomize a trial and download the resultant 
+    randomizations. The Goldilocks application is deployed on the web put some 
+    researchers may prefer an R package.
+URL: https://www.sciencedirect.com/science/article/pii/S245186542100048X, https://CRAN.R-project.org/package=shiny, https://bit.ly/GoldilocksApp
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
