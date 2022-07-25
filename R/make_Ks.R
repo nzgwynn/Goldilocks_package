@@ -1,3 +1,17 @@
+#' Title
+#'
+#' @param M
+#' @param vars
+#' @param D
+#' @param name
+#' @param Plot
+#' @param S
+#' @param ToC If
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make.Ks = function(M, vars, D, name, Plot, S, ToC){
   r.I = length(vars)
   No.cols = length(vars[[1]])

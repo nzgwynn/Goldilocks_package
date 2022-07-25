@@ -2,6 +2,17 @@
 ## So that when we double click on the
 ## Zoom graph the one we click on is
 ## the one where the colours come from.
+#' Title
+#'
+#' @param Max
+#' @param Min
+#' @param DC
+#' @param K
+#'
+#' @return
+#' @export
+#'
+#' @examples
 Round1 <- function(Max, Min, DC, K){
   ## Variables in the plot
   A = Round(Min, Max, K)

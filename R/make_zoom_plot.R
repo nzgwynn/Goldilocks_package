@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param data
+#' @param I
+#' @param Min
+#' @param Max
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make.zoom.plot = function(data, I, Min, Max){
   upper <- as.numeric(I[,"Maxs"])
   lower <- as.numeric(I[,"Mins"])

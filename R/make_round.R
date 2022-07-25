@@ -1,5 +1,14 @@
 ## Function that draws the plot and saves it in a file
 ## Graphing Ks
+#' Title
+#'
+#' @param column
+#' @param data
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make.order = function(column, data){
   data = data[order(data[, column]),]
   ## Grouping for color

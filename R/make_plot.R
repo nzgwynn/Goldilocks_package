@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param data
+#' @param I
+#'
+#' @return
+#' @export
+#'
+#' @examples
 make.plot = function(data, I){
   upper <- as.numeric(I[,"Maxs"])
   lower <- as.numeric(I[,"Mins"])
