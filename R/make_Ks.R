@@ -1,12 +1,11 @@
 #' Title
 #'
-#' @param M
-#' @param vars
-#' @param D
-#' @param name
-#' @param Plot
-#' @param S
-#' @param ToC If
+#' @param M a numeric vector of length one that is the number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.
+#' @param vars weights, min, max, and names from input gui, one for each variable choosen in the gui
+#' @param D data input in the xlsx format from the gui
+#' @param name names for the plot axises
+#' @param S The type of optimizer we use which is "glpk"
+#' @param ToC If there are an odd number of units to randomize if it goes to treatment or control.
 #'
 #' @return
 #' @export
@@ -115,3 +114,4 @@ make.Ks = function(M, vars, D, name, Plot, S, ToC){
 
   P
 } ## closing the function make.Ks
+

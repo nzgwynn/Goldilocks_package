@@ -7,7 +7,17 @@
 make.Ks(M, vars, D, name, Plot, S, ToC)
 }
 \arguments{
-\item{ToC}{If}
+\item{M}{number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.}
+
+\item{vars}{weights, min, max, and names from input gui, one for each variable choosen in the gui}
+
+\item{D}{data input in the xlsx format from the gui}
+
+\item{name}{names for the plot axises}
+
+\item{S}{The type of optimizer we use which is "glpk"}
+
+\item{ToC}{If there are an odd number of units to randomize if it goes to treatment or control.}
 }
 \description{
 Title

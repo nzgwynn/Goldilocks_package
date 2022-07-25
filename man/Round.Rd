@@ -2,13 +2,23 @@
 % Please edit documentation in R/round.R
 \name{Round}
 \alias{Round}
-\title{Title}
+\title{Interactive portion of the Shiny app that allows
+the zooming to work by modifying the limits of the
+zoom plot and rounds them}
 \usage{
 Round(Min, Max, N)
 }
 \arguments{
-\item{N}{}
+\item{Min}{numeric that is the minimum of the x value from brushing
+the original plot}
+
+\item{Max}{numeric that is the maximum of the x value
+from brushing the original}
+
+\item{N}{numeric of the number of variables used for matching}
 }
 \description{
-Title
+Interactive portion of the Shiny app that allows
+the zooming to work by modifying the limits of the
+zoom plot and rounds them
 }

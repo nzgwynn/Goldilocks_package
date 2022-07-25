@@ -1,4 +1,5 @@
 #' @import shiny
+#' @import ggplot2
 
 
 goldilocks <- function(){

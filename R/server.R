@@ -16,7 +16,7 @@ server <- function(input, output, session){
       return(NULL)
     file.rename(inFile$datapath,
                 paste(inFile$datapath, ".xlsx", sep=""))
-    D = read_excel(paste(inFile$datapath, ".xlsx", sep=""), 1)
+    D = readxl::read_excel(paste(inFile$datapath, ".xlsx", sep=""), 1)
     D = as.data.frame(D)
 
     ## Upating file names
@@ -94,7 +94,7 @@ server <- function(input, output, session){
   })
 
   A <- reactive({
-    randomNumbers(1, col = 1, min = 1, max = 1000000000)
+    random::randomNumbers(1, col = 1, min = 1, max = 1000000000)
   })
 
   output$DS <- renderPrint({
@@ -248,7 +248,8 @@ server <- function(input, output, session){
       ## case we don't have write permissions to the current working dir (which
       ## can happen when deployed).
       tempReport1 <- file.path(tempdir(), "report1.Rmd")
-      file.copy("report1.Rmd", tempReport1, overwrite = TRUE)
+      file.copy(system.file("reports/report1.Rmd", package = "GoldilocksPackage"),
+                tempReport1, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
       params <- list(I1 = Dat()[[1]], # name
@@ -286,7 +287,9 @@ server <- function(input, output, session){
       ## case we don't have write permissions to the current working dir (which
       ## can happen when deployed).
       tempReport <- file.path(tempdir(), "report.Rmd")
-      file.copy("report.Rmd", tempReport, overwrite = TRUE)
+      file.copy(system.file("reports/report.Rmd",
+                            package = "GoldilocksPackage"),
+                tempReport, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
       params <- list(I1 = Dat()[[1]],
@@ -302,8 +305,7 @@ server <- function(input, output, session){
                         switch(input$format,
                                PDF = pdf_document(), Word = word_document()),
                         output_file = file, params = params,
-                        envir = new.env(parent = globalenv())
-      )
+                        envir = new.env(parent = globalenv()))
     }
   )
 }

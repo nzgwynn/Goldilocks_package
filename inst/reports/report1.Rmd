@@ -1,0 +1,78 @@
+---
+title: "Graphic of final draw"
+date: "`r format(Sys.time(), '%B %d, %Y, %H:%M')`"
+output: html_document
+params:
+    j: NA
+    M: NA
+    Dt: NA
+    I1: NA
+    I2: NA
+    I3: NA
+    Rs: NA
+---
+## Plot
+
+The line in red below represents the balance in the variables for our draw.
+
+```{r plots, echo=FALSE, verbose = FALSE}
+R.ps1 = params$Rs
+R.ps1 = ifelse(R.ps1[, "Group"] == "Treatment", 1, 0)
+n = ceiling(length(R.ps1)/2)
+R.ps = R.ps1[1:n]
+Dt.ps = params$Dt
+C = dim(Dt.ps)[2]
+N = dim(Dt.ps)[1]
+if (params$j == TRUE) {
+  ## If nothing is leftover 
+  S = c(1 - R.ps, R.ps)
+} else {
+  ## If anything is, then we do
+  ## ToC is 2 for trt and 1 for control, added at end
+  ## Asssuming there are leftovers, Dt has the leftover at the
+  ## end but the treatment and control input has it at the 
+  ## beginning so gotta align them.
+  R = R.ps[-1]
+  S = c(1 - R, R, R.ps[1])
+}
+Dt = cbind(Dt.ps[,-C], S)
+Trt.CV = Dt[which(S == 1), 1:(C - 1)]
+Ctl.CV = Dt[-which(S == 1), 1:(C - 1)]
+A = abs((apply(Trt.CV, 2, sum) - 
+         apply(Ctl.CV, 2, sum))/N)
+Ks = rbind(params$I3, A)
+makePlot <- function(Mt, I, Ks) {
+  upper <- as.numeric(I[,"Maxs"])
+  lower <- as.numeric(I[,"Mins"])
+  No.Vars <- length(upper)
+  G <- c(rep("A", dim(Ks)[1]), "B")
+  CKs <- dim(Ks)[2]
+  RKs <- dim(Ks)[1]
+  CNs <- c(I[,'L'], "G")
+  
+  CM <- colMeans(Ks)
+  Ks <- cbind(rbind(Ks, CM), G)
+  colnames(Ks) = CNs
+  print(lattice::parallelplot(~Ks[1:No.Vars], Ks, groups = G,
+                     horizontal.axis = FALSE,
+                     scales = list(x = list(rot = 90), 
+                                   y = list(draw = FALSE)),
+                     col = c("grey50", "red"), lwd = c(1,3),
+                     lower = lower, upper = upper, 
+                     main = Mt,
+                     panel = function(...) {
+                       lattice::panel.parallel(...)
+                       grid::grid.text(lower,
+                                 x=unit(1:No.Vars, "native"),
+                                 y=unit(2, "mm"), just="bottom",
+                                 gp=grid::gpar(col="grey", cex=.7))
+                       grid::grid.text(upper,
+                                 x=unit(1:No.Vars, "native"),
+                                 y=unit(1, "npc") - unit(2, "mm"), 
+                                 just="top",
+                                 gp=grid::gpar(col="grey", cex=.7))
+                     }))
+} ## closing function
+makePlot(Mt = params$I1, I = params$I2, Ks = Ks)
+(params$Rs)
+```

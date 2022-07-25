@@ -26,7 +26,7 @@ make.zoom.plot = function(data, I, Min, Max){
   colnames(data) = C
 
   # Basic plot to update
-  p = ggparcoord(data, columns = 1:(Lims[2] - Lims[1] + 1), groupColumn = dim(data)[2],
+  p = GGally::ggparcoord(data, columns = 1:(Lims[2] - Lims[1] + 1), groupColumn = dim(data)[2],
                  scale = "globalminmax", shadeBox = NULL) + coord_cartesian(ylim = c(0,1))
 
   ## Using the colours that we like

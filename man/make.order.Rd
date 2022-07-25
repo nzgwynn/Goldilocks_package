@@ -2,13 +2,19 @@
 % Please edit documentation in R/make_round.R
 \name{make.order}
 \alias{make.order}
-\title{Title}
+\title{Interactive portion of the shiny app that
+recolors the plot}
 \usage{
-make.order(column, data)
+make.order(column, data, M = 9)
 }
 \arguments{
-\item{data}{}
+\item{column}{a string that says which column should be used to color the parallel coordinates plot}
+
+\item{data}{a dataframe made in make.Ks that need to be colored}
+
+\item{M}{a number which is the Max number of colors allowed in YlGnBu palette from RColorBrewer is 9}
 }
 \description{
-Title
+Interactive portion of the shiny app that
+recolors the plot
 }

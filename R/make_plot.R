@@ -17,7 +17,7 @@ make.plot = function(data, I){
   }
 
   # Basic plot to update
-  p = ggparcoord(data, columns = 1:N, groupColumn = (N + 1), scale = "globalminmax",
+  p = GGally::ggparcoord(data, columns = 1:N, groupColumn = (N + 1), scale = "globalminmax",
                  shadeBox = NULL) + coord_cartesian(ylim = c(0,1))
 
   p <- p + scale_colour_brewer(palette = "YlGnBu")
