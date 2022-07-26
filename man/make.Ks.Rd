@@ -4,20 +4,18 @@
 \alias{make.Ks}
 \title{Title}
 \usage{
-make.Ks(M, vars, D, name, Plot, S, ToC)
+make.Ks(M, vars, D, ToC, S)
 }
 \arguments{
-\item{M}{number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.}
+\item{M}{a numeric vector of length one that is the number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.}
 
-\item{vars}{weights, min, max, and names from input gui, one for each variable choosen in the gui}
+\item{vars}{a nested list that contains 5 things. In order: the name of the variable, the weight, the label for the plot, the min for the plot, and the max for the plot, all from input gui.}
 
-\item{D}{data input in the xlsx format from the gui}
-
-\item{name}{names for the plot axises}
-
-\item{S}{The type of optimizer we use which is "glpk"}
+\item{D}{a data frame input in the xlsx format from the gui}
 
 \item{ToC}{If there are an odd number of units to randomize if it goes to treatment or control.}
+
+\item{S}{}
 }
 \description{
 Title

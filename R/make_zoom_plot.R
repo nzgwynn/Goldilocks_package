@@ -1,14 +1,32 @@
 #' Title
 #'
-#' @param data
-#' @param I
-#' @param Min
-#' @param Max
+#' @inheritParams make_plot
+#' @param Min a numeric vector that is the minimum x value from brushing on the plot
+#' @param Max a numeric vector that is the maximum x value from brushing on the plot
 #'
-#' @return
+#' @return a plot that is enlarged from the brushing input on the normal plot
 #' @export
 #'
 #' @examples
+#'
+#' data <- data.frame(Var_1 = seq(0, 1, length = 9),
+#'                  Var_2 = seq(0, 5, length = 9),
+#'                  Var_3 = seq(0, 1, length = 9),
+#'                  Var_4 = seq(0, 10, length = 9),
+#'                  G = as.factor(1:9))
+#'
+#' I <- matrix(c(c("Var_1", "Var_2", "Var_3", "Var_4"),
+#'               rep(1, 4),
+#'               c("Var_1", "Var_2", "Var_3", "Var_4"),
+#'               rep(0, 4),
+#'               c(rep(5, 3), 10)), nrow = 4)
+#'
+#' colnames(I) = c("cols", "w", "L", "Mins", "Maxs")
+#'
+#'  Min <- 0.1
+#'  Max <- 0.6
+#'
+#'
 make.zoom.plot = function(data, I, Min, Max){
   upper <- as.numeric(I[,"Maxs"])
   lower <- as.numeric(I[,"Mins"])

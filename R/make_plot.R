@@ -1,12 +1,28 @@
 #' Title
 #'
-#' @param data
-#' @param I
+#' @param data a dataframe output from the make.Ks function
+#' @param I a string that is the name of one of the variables
+#' which will be used to color the plot, default is the first column
 #'
-#' @return
+#'
+#' @return this makes a parallel coordinate plot
 #' @export
 #'
 #' @examples
+#' data <- data.frame(Var_1 = seq(0, 1, length = 9),
+#'                  Var_2 = seq(0, 5, length = 9),
+#'                  Var_3 = seq(0, 1, length = 9),
+#'                  Var_4 = seq(0, 10, length = 9),
+#'                  G = as.factor(1:9))
+#'
+#' I <- matrix(c(c("Var_1", "Var_2", "Var_3", "Var_4"),
+#'               rep(1, 4),
+#'               c("Var_1", "Var_2", "Var_3", "Var_4"),
+#'               rep(0, 4),
+#'               c(rep(5, 3), 10)), nrow = 4)
+#' colnames(I) = c("cols", "w", "L", "Mins", "Maxs")
+#'
+#'
 make.plot = function(data, I){
   upper <- as.numeric(I[,"Maxs"])
   lower <- as.numeric(I[,"Mins"])
@@ -61,3 +77,7 @@ make.plot = function(data, I){
   # Display parallel coordinate plot
   print(p)
 }
+
+
+## To test vdiffr
+## https://cran.r-project.org/web/packages/vdiffr/index.html

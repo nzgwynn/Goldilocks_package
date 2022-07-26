@@ -1,17 +1,17 @@
 #' Title
 #'
 #' @param M a numeric vector of length one that is the number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.
-#' @param vars weights, min, max, and names from input gui, one for each variable choosen in the gui
-#' @param D data input in the xlsx format from the gui
-#' @param name names for the plot axises
-#' @param S The type of optimizer we use which is "glpk"
-#' @param ToC If there are an odd number of units to randomize if it goes to treatment or control.
+#' @param vars a nested list that contains 5 things. In order: the name of the variable, the weight, the label for the plot, the min for the plot, and the max for the plot, all from input gui.
+#' @param D a data frame input in the xlsx format from the gui
+#' @param ToC numeric that tells if there are an odd number of units to randomize if it goes to treatment or control.
+#' @param S a string
 #'
 #' @return
 #' @export
 #'
 #' @examples
-make.Ks = function(M, vars, D, name, Plot, S, ToC){
+
+make.Ks = function(M, vars, D, ToC, S){
   r.I = length(vars)
   No.cols = length(vars[[1]])
   I = matrix(NA, nrow = r.I, ncol = No.cols)
@@ -104,7 +104,6 @@ make.Ks = function(M, vars, D, name, Plot, S, ToC){
   colnames(Ks) = I[,'L']
 
   P = list()
-  P[[1]] = name ## name of file, not used
   P[[2]] = I ## matching things
   P[[3]] = as.data.frame(Ks) ## means after randomization
   P[[4]] = Ms ## The row numbers of the matches are in here
@@ -114,4 +113,3 @@ make.Ks = function(M, vars, D, name, Plot, S, ToC){
 
   P
 } ## closing the function make.Ks
-

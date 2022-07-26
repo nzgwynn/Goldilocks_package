@@ -10,10 +10,12 @@ Round(Min, Max, N)
 }
 \arguments{
 \item{Min}{numeric that is the minimum of the x value from brushing
-the original plot}
+the original plot. The limits of the original plot are \link{0,1} so Min is
+inside that interval}
 
 \item{Max}{numeric that is the maximum of the x value
-from brushing the original}
+from brushing the original. The limits of the original plot are
+\link{0,1} so Min is inside that interval and greater than Min.}
 
 \item{N}{numeric of the number of variables used for matching}
 }

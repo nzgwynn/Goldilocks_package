@@ -145,7 +145,7 @@ server <- function(input, output, session){
       V[[i]][[5]] = as.numeric(S[i])
     }
 
-    make.Ks(M = input$Times, D = M()[[1]], vars = V, name = "",
+    make.Ks(M = input$Times, D = M()[[1]], vars = V,
             ToC = as.numeric(isolate({input$ToC})), S = "glpk")
   }) ## eventReactive
 
