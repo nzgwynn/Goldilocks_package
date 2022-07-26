@@ -1,7 +1,7 @@
 Package: GoldilocksPackage
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
-Authors@R: person("gwynn", "sturdevant", "nzgwynn@gmail.com", role = c("aut", "cre"),
+Authors@R: person(given = "gwynn", family = "sturdevant", email = "nzgwynn@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1185-8446"))
 Author: gwynn sturdevant [aut, cre],
 Maintainer: gwynn sturdevant <nzgwynn@gmail.com>
@@ -26,7 +26,9 @@ Imports:
     lattice,
     random,
     readxl,
-    shiny
+    rmarkdown,
+    shiny,
+    stats
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

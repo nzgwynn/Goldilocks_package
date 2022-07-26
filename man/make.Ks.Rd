@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_Ks.R
 \name{make.Ks}
 \alias{make.Ks}
-\title{Title}
+\title{A function that randomizes}
 \usage{
 make.Ks(M, vars, D, ToC, S)
 }
@@ -21,7 +21,7 @@ make.Ks(M, vars, D, ToC, S)
 a list that contains information used to create the plot. The 4th element is the matches, the 3rd is the average differences.
 }
 \description{
-Title
+A function that randomizes
 }
 \examples{
 m <- 300

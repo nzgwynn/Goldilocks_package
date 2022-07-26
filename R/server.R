@@ -1,3 +1,6 @@
+#' @import rmarkdown
+
+
 server <- function(input, output, session){
 
   K <- reactive({
@@ -75,8 +78,6 @@ server <- function(input, output, session){
       output[[i]][[1]] = hr(style="height:5px;background-color:blue")
       output[[i]][[2]] = G[i]
       output[[i]][[3]] = br()
-      output[[i]][[4]] = selectInput(R()[i], "Treatment or control:",
-                                     c("Treatment" = "1", "Control" = "0"))
 
     } ## for loop
 
@@ -264,7 +265,6 @@ server <- function(input, output, session){
       # Knit the document, passing in the `params` list, and eval it in a
       # child of the global environment (this isolates the code in the document
       # from the code in this app).
-      library(rmarkdown)
       rmarkdown::render(tempReport1,
                         switch(input$format,
                                PDF = pdf_document(), Word = word_document()),
@@ -300,7 +300,6 @@ server <- function(input, output, session){
       # Knit the document, passing in the `params` list, and eval it in a
       # child of the global environment (this isolates the code in the document
       # from the code in this app).
-      library(rmarkdown)
       rmarkdown::render(tempReport,
                         switch(input$format,
                                PDF = pdf_document(), Word = word_document()),

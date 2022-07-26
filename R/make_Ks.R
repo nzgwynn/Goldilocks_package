@@ -1,5 +1,6 @@
-#' Title
+#' A function that randomizes
 #'
+#' @import stats
 #' @param M a numeric vector of length one that is the number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.
 #' @param vars a nested list that contains 5 things. In order: the name of the variable, the weight, the label for the plot, the min for the plot, and the max for the plot, all from input gui.
 #' @param D a data frame input in the xlsx format from the gui
