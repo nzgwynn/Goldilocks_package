@@ -13,10 +13,33 @@ make.Ks(M, vars, D, ToC, S)
 
 \item{D}{a data frame input in the xlsx format from the gui}
 
-\item{ToC}{If there are an odd number of units to randomize if it goes to treatment or control.}
+\item{ToC}{numeric that tells if there are an odd number of units to randomize if it goes to treatment or control.}
 
-\item{S}{}
+\item{S}{a string that tells that optimizer to use "glpk" method of optimizing}
+}
+\value{
+a list that contains information used to create the plot. The 4th element is the matches, the 3rd is the average differences.
 }
 \description{
 Title
+}
+\examples{
+m <- 300
+vars <- list(
+        list("Var_1", 1, "Var 1", 0, 5),
+        list("Var_2", 1, "Var 2", 0, 5),
+        list("Var_3", 1, "Var 3", 0, 5),
+        list("Var_4", 1, "Var 4", 0, 5))
+
+df <- data.frame("Var_1" = seq(10, 5, length = 10),
+                 "Var_2" = seq(30, 50, length = 10),
+                 "Var_3" = seq(0, 1, length = 10),
+                 "Var_4" = seq(20, 30, length = 10))
+S <- "glpk"
+ToC <- 2
+
+
+make.Ks(M = m, vars = vars, D = df, ToC = ToC, S = S)
+
+
 }

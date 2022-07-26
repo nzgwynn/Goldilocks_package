@@ -7,8 +7,40 @@
 make.zoom.plot(data, I, Min, Max)
 }
 \arguments{
-\item{Max}{}
+\item{data}{a dataframe output from the make.Ks function}
+
+\item{I}{a string that is the name of one of the variables
+which will be used to color the plot, default is the first column}
+
+\item{Min}{a numeric vector that is the minimum x value from brushing on the plot}
+
+\item{Max}{a numeric vector that is the maximum x value from brushing on the plot}
+}
+\value{
+a plot that is enlarged from the brushing input on the normal plot
 }
 \description{
 Title
+}
+\examples{
+
+data <- data.frame(Var_1 = seq(0, 1, length = 9),
+                 Var_2 = seq(0, 5, length = 9),
+                 Var_3 = seq(0, 1, length = 9),
+                 Var_4 = seq(0, 10, length = 9),
+                 G = as.factor(1:9))
+
+I <- matrix(c(c("Var_1", "Var_2", "Var_3", "Var_4"),
+              rep(1, 4),
+              c("Var_1", "Var_2", "Var_3", "Var_4"),
+              rep(0, 4),
+              c(rep(5, 3), 10)), nrow = 4)
+
+colnames(I) = c("cols", "w", "L", "Mins", "Maxs")
+
+ Min <- 0.1
+ Max <- 0.6
+
+make.zoom.plot(data = data, I = I, Min = Min, Max = Max)
+
 }

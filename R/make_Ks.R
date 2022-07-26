@@ -4,13 +4,30 @@
 #' @param vars a nested list that contains 5 things. In order: the name of the variable, the weight, the label for the plot, the min for the plot, and the max for the plot, all from input gui.
 #' @param D a data frame input in the xlsx format from the gui
 #' @param ToC numeric that tells if there are an odd number of units to randomize if it goes to treatment or control.
-#' @param S a string
+#' @param S a string that tells that optimizer to use "glpk" method of optimizing
 #'
-#' @return
+#' @return a list that contains information used to create the plot. The 4th element is the matches, the 3rd is the average differences.
 #' @export
 #'
 #' @examples
-
+#' m <- 300
+#' vars <- list(
+#'         list("Var_1", 1, "Var 1", 0, 5),
+#'         list("Var_2", 1, "Var 2", 0, 5),
+#'         list("Var_3", 1, "Var 3", 0, 5),
+#'         list("Var_4", 1, "Var 4", 0, 5))
+#'
+#' df <- data.frame("Var_1" = seq(10, 5, length = 10),
+#'                  "Var_2" = seq(30, 50, length = 10),
+#'                  "Var_3" = seq(0, 1, length = 10),
+#'                  "Var_4" = seq(20, 30, length = 10))
+#' S <- "glpk"
+#' ToC <- 2
+#'
+#'
+#' make.Ks(M = m, vars = vars, D = df, ToC = ToC, S = S)
+#'
+#'
 make.Ks = function(M, vars, D, ToC, S){
   r.I = length(vars)
   No.cols = length(vars[[1]])

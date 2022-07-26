@@ -22,6 +22,8 @@
 #'               c(rep(5, 3), 10)), nrow = 4)
 #' colnames(I) = c("cols", "w", "L", "Mins", "Maxs")
 #'
+#' make.plot(data = data, I = I)
+#'
 #'
 make.plot = function(data, I){
   upper <- as.numeric(I[,"Maxs"])

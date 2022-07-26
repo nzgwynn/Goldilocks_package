@@ -24,13 +24,9 @@ Imports:
     ggplot2,
     grid,
     lattice,
-    plotrix,
     random,
-    RColorBrewer,
     readxl,
-    shiny,
-    shinyjs,
-    slam
+    shiny
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

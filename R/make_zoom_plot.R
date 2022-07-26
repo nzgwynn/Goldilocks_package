@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @inheritParams make_plot
+#' @inheritParams make.plot
 #' @param Min a numeric vector that is the minimum x value from brushing on the plot
 #' @param Max a numeric vector that is the maximum x value from brushing on the plot
 #'
@@ -26,6 +26,7 @@
 #'  Min <- 0.1
 #'  Max <- 0.6
 #'
+#' make.zoom.plot(data = data, I = I, Min = Min, Max = Max)
 #'
 make.zoom.plot = function(data, I, Min, Max){
   upper <- as.numeric(I[,"Maxs"])

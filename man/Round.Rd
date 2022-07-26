@@ -10,7 +10,7 @@ Round(Min, Max, N)
 }
 \arguments{
 \item{Min}{numeric that is the minimum of the x value from brushing
-the original plot. The limits of the original plot are \link{0,1} so Min is
+the original plot. The limits of the original plot are $\link{0,1}$ so Min is
 inside that interval}
 
 \item{Max}{numeric that is the maximum of the x value
@@ -19,8 +19,16 @@ from brushing the original. The limits of the original plot are
 
 \item{N}{numeric of the number of variables used for matching}
 }
+\value{
+a vector of length two that tells the zoom plot the variables to display
+}
 \description{
 Interactive portion of the Shiny app that allows
 the zooming to work by modifying the limits of the
 zoom plot and rounds them
+}
+\examples{
+
+Round(Min = .0245, Max = .1534, N = 20)
+
 }
