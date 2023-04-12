@@ -1,4 +1,4 @@
-test_that("Round1ing for the coloring actually works", {
+test_that("Rounding for the coloring actually works", {
 
   test_1 <- Round1(Min = .2045, Max = .5234, DC = .43 , K = 20)
   expect_equal(test_1, 7)

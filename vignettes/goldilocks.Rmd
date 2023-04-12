@@ -18,5 +18,22 @@ knitr::opts_chunk$set(
 library(goldilocks)
 ```
 
+Randomized controlled trials are considered the gold standard for testing an intervention. Instead of randomizing at the individual level, some trials need to randomize at the group level. For example, nursing homes, emergency rooms, or educational interventions need interventions for the whole institution. Although these group randomized trials (GRT) may have a large number of participants, they have a smaller number of units to randomize so ensuring balance in treatment and intervention arm is important. `{goldilocks}` allows researchers to practice randomizing GRT so that randomizations can occur with confidence. `{goldilocks}` contains the following panels:
 
+1.  *Upload* data in `.xlxs` format
 
+2.  *General inputs* for the number of variables and number of randomizations
+
+3.  Priority variables to balance, weights, and maxes for each variable. Hit the red button and iterate until a suitable distribution is found. Most work will be done here.
+
+4.  *Summaries* of the raw data, and the number of pairs.
+
+5.  Share the plot with colleagues to confer on the *Download* tab.
+
+6.  Find the pairs in the *Matches* tab.
+
+7.  *Randomize* next, and record the seed someplace safe.
+
+8.  Find out how balanced your trial is using the *Download Final Plot* tab.
+
+A video detailing how to use the first three panels can be found [here](https://www.youtube.com/watch?v=GZz7D3OwYKo). And an this [article]([https://www.sciencedirect.com/science/article/pii/S245186542100048X)](https://www.sciencedirect.com/science/article/pii/S245186542100048X)) gives full details about how researchers can use `{goldilocks}` in practice.
