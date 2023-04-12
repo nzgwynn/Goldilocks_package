@@ -1,9 +1,16 @@
 #' @import shiny
 #' @import ggplot2
+NULL
 
-
+#' Run Shiny app
+#'
+#' TODO documentation here!
+#'
+#' @export
+#' @examples
+#'  \dontrun{goldilocks()}
 goldilocks <- function(){
-  shinyApp(ui = ui(),
+  shiny::shinyApp(ui = ui(),
          server = server,
          enableBookmarking = "url")
 }

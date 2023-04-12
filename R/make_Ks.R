@@ -36,7 +36,6 @@ make.Ks = function(M, vars, D, ToC, S){
   for(i in 1:r.I) I[i,] = unlist(vars[[i]])
 
   dimnames(I) = list(rep(NULL, r.I), c("cols", "w", "L", "Mins", "Maxs"))
-
   ## No. of participant hospitals
   N = dim(D)[1]
 
@@ -56,11 +55,11 @@ make.Ks = function(M, vars, D, ToC, S){
   dist_mat_obj = dist(sdmat, diag = TRUE, upper = TRUE)
   dist_mat = as.matrix(dist_mat_obj)
 
-  ## Telling the computer wich method to use to solve
+  ## Telling the computer which method to use to solve
   t_max = 60*5
   solver = S
   approximate = 0
-  solver = list(name = solver, t_max = t_max, approximate = approximate,
+  solver = list(name = "glpk", t_max = t_max, approximate = approximate,
                 round_cplex = 0, trace_cplex = 0)
 
   ## Solving

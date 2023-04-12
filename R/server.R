@@ -1,6 +1,7 @@
 #' @import rmarkdown
 
 
+# nocov start
 server <- function(input, output, session){
 
   K <- reactive({
@@ -249,7 +250,7 @@ server <- function(input, output, session){
       ## case we don't have write permissions to the current working dir (which
       ## can happen when deployed).
       tempReport1 <- file.path(tempdir(), "report1.Rmd")
-      file.copy(system.file("reports/report1.Rmd", package = "GoldilocksPackage"),
+      file.copy(system.file("reports/report1.Rmd", package = "goldilocks"),
                 tempReport1, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
@@ -288,7 +289,7 @@ server <- function(input, output, session){
       ## can happen when deployed).
       tempReport <- file.path(tempdir(), "report.Rmd")
       file.copy(system.file("reports/report.Rmd",
-                            package = "GoldilocksPackage"),
+                            package = "goldilocks"),
                 tempReport, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
@@ -308,3 +309,4 @@ server <- function(input, output, session){
     }
   )
 }
+# nocov end

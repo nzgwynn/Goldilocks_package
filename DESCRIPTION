@@ -1,11 +1,9 @@
-Package: GoldilocksPackage
-Title: What the Package Does (One Line, Title Case)
+Package: goldilocks
+Title: Randomize cluster trials with confidence
 Version: 0.0.0.9000
-Authors@R: person(given = "gwynn", family = "sturdevant", email = "nzgwynn@gmail.com", role = c("aut", "cre"),
+Authors@R: person(given = "gwynn", family = "gebeyehu", email = "nzgwynn@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1185-8446"))
-Author: gwynn sturdevant [aut, cre],
-Maintainer: gwynn sturdevant <nzgwynn@gmail.com>
-Description: The Goldilocks package implements the theoretical permentation
+Description: The Goldilocks package implements the theoretical permutation
     approach developed in this article is an interactive Shiny application. 
     This package allows researchers to randomize cluster randomized trials with 
     confidence by visualizing the distribution of average differences in the 
@@ -13,7 +11,8 @@ Description: The Goldilocks package implements the theoretical permentation
     allows researchers to randomize a trial and download the resultant 
     randomizations. The Goldilocks application is deployed on the web put some 
     researchers may prefer an R package.
-URL: https://www.sciencedirect.com/science/article/pii/S245186542100048X, https://CRAN.R-project.org/package=shiny, https://bit.ly/GoldilocksApp
+URL: https://github.com/nzgwynn/goldilocks, https://www.sciencedirect.com/science/article/pii/S245186542100048X, https://bit.ly/GoldilocksApp
+BugReports: https://github.com/nzgwynn/goldilocks/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -22,13 +21,15 @@ Imports:
     designmatch,
     GGally,
     ggplot2,
-    grid,
-    lattice,
     random,
     readxl,
     rmarkdown,
     shiny,
     stats
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    grid,
+    lattice,
+    knitr
 Config/testthat/edition: 3
+VignetteBuilder: knitr

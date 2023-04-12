@@ -8,8 +8,7 @@
 #' @param M a number which is the Max number of colors allowed in YlGnBu palette from RColorBrewer is 9
 #'
 #' @return a dataframe that includes a column with G used to color a plot
-#' @export
-#'
+#' @noRd
 #' @examples
 #' df <- data.frame(x = seq(10, 5, length = 5), y = seq(30, 50, length = 5))
 #' result_x <- make.order(column = "x", data = df)
