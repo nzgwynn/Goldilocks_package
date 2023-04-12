@@ -1,4 +1,4 @@
-#' Title
+#' Used to enlarge the results in make_plot.
 #'
 #' @inheritParams make.plot
 #' @param Min a numeric vector that is the minimum x value from brushing on the plot

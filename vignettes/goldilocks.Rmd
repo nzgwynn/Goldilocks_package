@@ -36,4 +36,4 @@ Randomized controlled trials are considered the gold standard for testing an int
 
 8.  Find out how balanced your trial is using the *Download Final Plot* tab.
 
-A video detailing how to use the first three panels can be found [here](https://www.youtube.com/watch?v=GZz7D3OwYKo). And an this [article]([https://www.sciencedirect.com/science/article/pii/S245186542100048X)](https://www.sciencedirect.com/science/article/pii/S245186542100048X)) gives full details about how researchers can use `{goldilocks}` in practice.
+A video detailing how to use the first three panels can be found [here](https://www.youtube.com/watch?v=GZz7D3OwYKo), and this [article](https://www.sciencedirect.com/science/article/pii/S245186542100048X) gives full details about how researchers have used `{goldilocks}` in practice.

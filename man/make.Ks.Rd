@@ -2,26 +2,26 @@
 % Please edit documentation in R/make_Ks.R
 \name{make.Ks}
 \alias{make.Ks}
-\title{A function that randomizes}
+\title{A function that matches then randomizes pairs M times}
 \usage{
 make.Ks(M, vars, D, ToC, S)
 }
 \arguments{
 \item{M}{a numeric vector of length one that is the number of times to practice randomizing, if this is too large it is hard to read the parallel coordinates plot. We recommend 300 which is the default.}
 
-\item{vars}{a nested list that contains 5 things. In order: the name of the variable, the weight, the label for the plot, the min for the plot, and the max for the plot, all from input gui.}
+\item{vars}{a nested list that contains 5 things. In order: the names of the variables, the weights, the labels for the plot, the min for the plot, and the max for the plot, all from input gui.}
 
-\item{D}{a data frame input in the xlsx format from the gui}
+\item{D}{a data frame input in xlsx format from the gui}
 
-\item{ToC}{numeric that tells if there are an odd number of units to randomize if it goes to treatment or control.}
+\item{ToC}{numeric - if there are an odd number of units to randomize should the unpaired unit be in treatment or control.}
 
-\item{S}{a string that tells that optimizer to use "glpk" method of optimizing}
+\item{S}{a string that tells the optimizer to use "glpk" method of optimizing}
 }
 \value{
 a list that contains information used to create the plot. The 4th element is the matches, the 3rd is the average differences.
 }
 \description{
-A function that randomizes
+A function that matches then randomizes pairs M times
 }
 \examples{
 m <- 300

@@ -1,4 +1,5 @@
-#' Title
+#' The inputs from the Matching tab are used to run make_Ks, then this plot is made.
+#'
 #'
 #' @param data a dataframe output from the make.Ks function
 #' @param I a string that is the name of one of the variables

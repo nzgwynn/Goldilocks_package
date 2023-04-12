@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_zoom_plot.R
 \name{make.zoom.plot}
 \alias{make.zoom.plot}
-\title{Title}
+\title{Used to enlarge the results in make_plot.}
 \usage{
 make.zoom.plot(data, I, Min, Max)
 }
@@ -20,7 +20,7 @@ which will be used to color the plot, default is the first column}
 a plot that is enlarged from the brushing input on the normal plot
 }
 \description{
-Title
+Used to enlarge the results in make_plot.
 }
 \examples{
 

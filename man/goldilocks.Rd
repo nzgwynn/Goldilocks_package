@@ -2,12 +2,12 @@
 % Please edit documentation in R/goldilocks.R
 \name{goldilocks}
 \alias{goldilocks}
-\title{Run Shiny app}
+\title{This function takes the ui and server from \code{{goldilocks}} and runs it locally.}
 \usage{
 goldilocks()
 }
 \description{
-TODO documentation here!
+This function takes the ui and server from \code{{goldilocks}} and runs it locally.
 }
 \examples{
  \dontrun{goldilocks()}

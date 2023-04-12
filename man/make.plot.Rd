@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_plot.R
 \name{make.plot}
 \alias{make.plot}
-\title{Title}
+\title{The inputs from the Matching tab are used to run make_Ks, then this plot is made.}
 \usage{
 make.plot(data, I)
 }
@@ -16,7 +16,7 @@ which will be used to color the plot, default is the first column}
 this makes a parallel coordinate plot
 }
 \description{
-Title
+The inputs from the Matching tab are used to run make_Ks, then this plot is made.
 }
 \examples{
 data <- data.frame(Var_1 = seq(0, 1, length = 9),
