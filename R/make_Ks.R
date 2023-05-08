@@ -10,8 +10,10 @@
 #' plot, the min for the plot, and the max for the plot, all
 #' from input gui.
 #' @param D a data frame input in xlsx format from the gui
-#' @param ToC numeric - if there are an odd number of units to randomize should the unpaired unit be in treatment or control.
-#' @param S a string that tells the optimizer to use "glpk" method of optimizing
+#' @param ToC numeric - if there are an odd number of units to
+#'  randomize should the unpaired unit be in treatment or control.
+#' @param S a string that tells the optimizer to use "glpk"
+#' method of optimizing
 #'
 #' @return a list that contains information used to create the plot. The 4th element is the matches, the 3rd is the average differences.
 #' @export

@@ -20,8 +20,8 @@ Below are the weights I like best and are used to make the graph.
     paste0(params$N,"'s preferred weights.")
     
     library(knitr)  
-    Dt = data.frame(params$I2)
-    Dt = Dt[,c(1:3,5)]
+    Dt <- data.frame(params$I2)
+    Dt <- Dt[,c(1:3,5)]
     colnames(Dt)  %>%  c("Column","Weight","Label","Maximum")
     (kable(Dt))
 ```
