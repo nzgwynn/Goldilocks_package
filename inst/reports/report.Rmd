@@ -22,17 +22,16 @@ Below are the weights I like best and are used to make the graph.
     library(knitr)  
     Dt = data.frame(params$I2)
     Dt = Dt[,c(1:3,5)]
-    colnames(Dt) = c("Column","Weight","Label","Maximum")
+    colnames(Dt)  %>%  c("Column","Weight","Label","Maximum")
     (kable(Dt))
 ```
 
 ## Plot
-
 ```{r plots, echo=FALSE, verbose = FALSE}
 makePlot <- function(Mt, L, Ks) {
   upper <- as.numeric(L[,"Maxs"])
   lower <- as.numeric(L[,"Mins"])
-  No.Vars = length(upper)
+  No.Vars <-  length(upper)
   print(lattice::parallelplot(Ks, horizontal.axis = FALSE,
                      scales = list(x = list(rot = 90), 
                                    y = list(draw = FALSE)),

@@ -13,9 +13,10 @@ ui <- function() {
           "Upload Data",
           sidebarPanel(
             helpText(
-              "Input an excel file here (.xlsx). We assume the data are in the
-                                  first sheet with titles in the first row. This method does
-                                  not work with missing data in any of the matching variables."
+              "Input an excel file here (.xlsx). We assume the data
+              are in the first sheet with titles in the first row.
+              This method does not work with missing data in any of
+              the matching variables."
             ),
             br(),
 
@@ -36,10 +37,11 @@ ui <- function() {
 
           sidebarPanel(
             helpText(
-              "Input the number of times we will randomize, the number of
-                                  variables to be considered in this randomization scheme,
-                                  and if leftover units should be in treatment or control arm.
-                                  The next tab will be used to build the rest of the plot."
+              "Input the number of times we will randomize,
+              the number of variables to be considered in this
+              randomization scheme, and if leftover units should
+              be in treatment or control arm. The next tab will
+              be used to build the rest of the plot."
             ),
 
             sliderInput(
@@ -55,7 +57,7 @@ ui <- function() {
 
             helpText(
               "If there are an odd number of units to randomize
-                                  the remainder can be in either treatment or control."
+              the remainder can be in either treatment or control."
             ),
             radioButtons(
               "ToC",
@@ -72,16 +74,18 @@ ui <- function() {
           value = "panel3",
           sidebarPanel(
             helpText(
-              "Choose variables below to be randomized, then input labels,
-                                  weights, and minimum and maximum for the y-axis for that
-                                  variable. After you've finished hit the Go button to
-                                  see the plot. The black line in the plot is the mean difference
-                                  for each arm."
+              "Choose variables below to be randomized,
+              then input labels, weights, and minimum and
+              maximum for the y-axis for that variable. After
+              you've finished hit the Go button to see the plot.
+              The black line in the plot is the mean difference
+              for each arm."
             ),
 
             br(),
 
-            actionButton("go", "Go", width = "150px", style = "background-color:red"),
+            actionButton("go", "Go", width = "150px",
+                         style = "background-color:red"),
             br(),
 
             helpText(
@@ -132,8 +136,8 @@ ui <- function() {
           sidebarPanel(
             helpText(
               "Below find the row numbers of the matches. If there
-                                  are an odd number of matching units, the leftover
-                                  is listed first."
+              are an odd number of matching units, the leftover
+              is listed first."
             ),
             br(),
 
@@ -160,18 +164,19 @@ ui <- function() {
           "Randomization",
           sidebarPanel(
             helpText(
-              "A statistician should be consulted prior to randomization.
-                                  This app is no replacement, it only facilitates randomization."
+              "A statistician should be consulted prior to
+              randomization.This app is no replacement, it only
+              facilitates randomization."
             ),
             br(),
             br(),
 
             helpText(
-              "Seeds force computers to generate the same random numbers.
-                                  Statisticians generate a random seed for each trial that is
-                                  recorded for reproducibility. If your trial needs a seed
-                                  please click the box below. If this trial has a seed
-                                  please input it."
+              "Seeds force computers to generate the same
+              random numbers. Statisticians generate a random seed
+              for each trial that is recorded for reproducibility.
+              If your trial needs a seed please click the box below.
+              If this trial has a seed please input it."
             ),
 
             checkboxInput("seed", "Generate a seed for this trial"),
@@ -207,8 +212,10 @@ ui <- function() {
           sidebarPanel(
             helpText(
               "This page downloads the final graph to be used
-                                  in publications. Use matches in previous tab to
-                                  randomize. After, input results below. If there
+                                  in publications.
+                                  Use matches in previous tab to
+                                  randomize. After, input results
+                                  below. If there
                                   are any leftovers they are first."
             ),
             textInput("FN1", label = h3("File name:"),

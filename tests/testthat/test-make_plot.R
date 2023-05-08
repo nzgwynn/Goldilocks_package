@@ -11,7 +11,7 @@ test_that("make plot works", {
                 c("Var_1", "Var_2", "Var_3", "Var_4"),
                 rep(0, 4),
                 c(rep(5, 3), 10)), nrow = 4)
-  colnames(I) = c("cols", "w", "L", "Mins", "Maxs")
+  colnames(I) <- c("cols", "w", "L", "Mins", "Maxs")
 
   expect_silent(make.plot(data = data, I = I))
 

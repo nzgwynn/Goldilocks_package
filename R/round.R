@@ -13,7 +13,8 @@
 #' `[0,1]` so Min is inside that interval and greater than Min.
 #' @param N numeric of the number of variables used for matching
 #'
-#' @return a vector of length two that tells the zoom plot the variables to display
+#' @return a vector of length two that tells the zoom plot the
+#'  variables to display
 #' @noRd
 #'
 #' @examples
@@ -22,7 +23,7 @@
 #'
 Round <- function(Min, Max, N){
   ## The x values returned from the graph
-  SEQ = c(0, (1:(N))*(1/(N-1)))
+  SEQ <- c(0, (1:(N))*(1/(N-1)))
 
   ## returns min and max
   c(max(which(SEQ<=Min)), min(which(SEQ>=Max)))

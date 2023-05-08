@@ -16,31 +16,31 @@ params:
 The line in red below represents the balance in the variables for our draw.
 
 ```{r plots, echo=FALSE, verbose = FALSE}
-R.ps1 = params$Rs
-R.ps1 = ifelse(R.ps1[, "Group"] == "Treatment", 1, 0)
-n = ceiling(length(R.ps1)/2)
-R.ps = R.ps1[1:n]
-Dt.ps = params$Dt
-C = dim(Dt.ps)[2]
-N = dim(Dt.ps)[1]
+R.ps1 <-  params$Rs
+R.ps1 <-  ifelse(R.ps1[, "Group"] == "Treatment", 1, 0)
+n <-  ceiling(length(R.ps1)/2)
+R.ps <-  R.ps1[1:n]
+Dt.ps <-  params$Dt
+C <-  dim(Dt.ps)[2]
+N <-  dim(Dt.ps)[1]
 if (params$j == TRUE) {
   ## If nothing is leftover 
-  S = c(1 - R.ps, R.ps)
+  S <-  c(1 - R.ps, R.ps)
 } else {
   ## If anything is, then we do
   ## ToC is 2 for trt and 1 for control, added at end
   ## Asssuming there are leftovers, Dt has the leftover at the
   ## end but the treatment and control input has it at the 
   ## beginning so gotta align them.
-  R = R.ps[-1]
-  S = c(1 - R, R, R.ps[1])
+  R <-  R.ps[-1]
+  S <-  c(1 - R, R, R.ps[1])
 }
-Dt = cbind(Dt.ps[,-C], S)
-Trt.CV = Dt[which(S == 1), 1:(C - 1)]
-Ctl.CV = Dt[-which(S == 1), 1:(C - 1)]
-A = abs((apply(Trt.CV, 2, sum) - 
+Dt <-  cbind(Dt.ps[,-C], S)
+Trt.CV <-  Dt[which(S == 1), 1:(C - 1)]
+Ctl.CV <-  Dt[-which(S == 1), 1:(C - 1)]
+A <-  abs((apply(Trt.CV, 2, sum) - 
          apply(Ctl.CV, 2, sum))/N)
-Ks = rbind(params$I3, A)
+Ks <-  rbind(params$I3, A)
 makePlot <- function(Mt, I, Ks) {
   upper <- as.numeric(I[,"Maxs"])
   lower <- as.numeric(I[,"Mins"])
@@ -52,7 +52,7 @@ makePlot <- function(Mt, I, Ks) {
   
   CM <- colMeans(Ks)
   Ks <- cbind(rbind(Ks, CM), G)
-  colnames(Ks) = CNs
+  colnames(Ks) <-  CNs
   print(lattice::parallelplot(~Ks[1:No.Vars], Ks, groups = G,
                      horizontal.axis = FALSE,
                      scales = list(x = list(rot = 90), 

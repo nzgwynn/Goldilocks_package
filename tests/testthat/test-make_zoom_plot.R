@@ -13,7 +13,7 @@ test_that("make plot works", {
                 rep(0, 4),
                 c(rep(5, 3), 10)), nrow = 4)
 
-  colnames(I) = c("cols", "w", "L", "Mins", "Maxs")
+  colnames(I) <- c("cols", "w", "L", "Mins", "Maxs")
 
   Min <- 0.1
   Max <- 0.6

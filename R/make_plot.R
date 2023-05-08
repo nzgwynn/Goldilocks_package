@@ -1,4 +1,5 @@
-#' The inputs from the Matching tab are used to run make_Ks, then this plot is made.
+#' The inputs from the Matching tab are used to run make_Ks,
+#' then this plot is made.
 #'
 #'
 #' @param data a dataframe output from the make.Ks function
@@ -26,7 +27,7 @@
 #' make.plot(data = data, I = I)
 #'
 #'
-make.plot = function(data, I){
+make.plot <- function(data, I){
   upper <- as.numeric(I[,"Maxs"])
   lower <- as.numeric(I[,"Mins"])
   N <- length(upper)
@@ -36,8 +37,11 @@ make.plot = function(data, I){
   }
 
   # Basic plot to update
-  p = GGally::ggparcoord(data, columns = 1:N, groupColumn = (N + 1), scale = "globalminmax",
-                 shadeBox = NULL) + coord_cartesian(ylim = c(0,1))
+  p <-  GGally::ggparcoord(data, columns = 1:N,
+                           groupColumn = (N + 1),
+                           scale = "globalminmax",
+                           shadeBox = NULL) +
+    coord_cartesian(ylim = c(0,1))
 
   p <- p + scale_colour_brewer(palette = "YlGnBu")
 
