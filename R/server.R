@@ -25,7 +25,7 @@ server <- function(input, output, session){
 
     ## Upating file names
     colnames(D) <- labs <- gsub("\r\n"," ", colnames(D))
-    nums <- labs[which(sapply(D, is.numeric) == TRUE)]
+    nums <- labs[which(vapply(D, is.numeric) == TRUE)]
 
     M[[1]] <- D
     M[[2]] <- nums
@@ -252,7 +252,7 @@ server <- function(input, output, session){
       ## case we don't have write permissions to the current working dir (which
       ## can happen when deployed).
       tempReport1 <- file.path(tempdir(), "report1.Rmd")
-      file.copy(system.file("reports/report1.Rmd", package = "goldilocks"),
+      file.copy(system.file("reports/report1.Rmd", package = "goldilocks_app"),
                 tempReport1, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
@@ -291,7 +291,7 @@ server <- function(input, output, session){
       ## can happen when deployed).
       tempReport <- file.path(tempdir(), "report.Rmd")
       file.copy(system.file("reports/report.Rmd",
-                            package = "goldilocks"),
+                            package = "goldilocks_app"),
                 tempReport, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
