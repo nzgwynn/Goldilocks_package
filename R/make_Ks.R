@@ -15,7 +15,9 @@
 #' @param S a string that tells the optimizer to use "glpk"
 #' method of optimizing
 #'
-#' @return a list that contains information used to create the plot. The 4th element is the matches, the 3rd is the average differences.
+#' @return a list that contains information used to create the plot.
+#'  The 4th element is the matches, the 3rd is the average
+#'   differences.
 #' @export
 #'
 #' @examples
