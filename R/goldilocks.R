@@ -13,3 +13,4 @@ goldilocksTwoArm <- function(){
          server = server,
          enableBookmarking = "url")
 }
+

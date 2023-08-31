@@ -25,7 +25,7 @@ server <- function(input, output, session){
 
     ## Upating file names
     colnames(D) <- labs <- gsub("\r\n"," ", colnames(D))
-    nums <- labs[which(vapply(D, is.numeric) == TRUE)]
+    nums <- labs[which(vapply(D, is.numeric, logical(1)) == TRUE)]
 
     M[[1]] <- D
     M[[2]] <- nums
@@ -38,9 +38,12 @@ server <- function(input, output, session){
   })
 
   output$VarsInput <- renderUI({
-    C <- sapply(1:K(), function(i){paste0("cols",i)})
-    W <- sapply(1:K(), function(i){paste0("weight",i)})
-    S <- sapply(1:K(), function(i){paste0("slider",i)})
+    C <- vapply(1:K(),
+                function(i){paste0("cols",i)}, character(1))
+    W <- vapply(1:K(),
+                function(i){paste0("weight",i)}, character(1))
+    S <- vapply(1:K(),
+                function(i){paste0("slider",i)},character(1))
 
     output <- tagList()
 
@@ -133,9 +136,15 @@ server <- function(input, output, session){
   output$Rands <- renderDataTable(Rs())
 
   Dat <- eventReactive(input$go, {
-    C <- sapply(1:K(), function(i){input[[paste0("cols",i)]]})
-    W <- sapply(1:K(), function(i){input[[paste0("weight",i)]]})
-    S <- sapply(1:K(), function(i){input[[paste0("slider",i)]]})
+    C <- vapply(1:K(),
+                function(i){input[[paste0("cols",i)]]},
+                character(1))
+    W <- vapply(1:K(),
+                function(i){input[[paste0("weight",i)]]},
+                character(1))
+    S <- vapply(1:K(),
+                function(i){input[[paste0("slider",i)]]},
+                character(1))
 
     V <- list()
     for(i in 1:K()){
@@ -206,7 +215,9 @@ server <- function(input, output, session){
 
   ## Summary of data
   output$summary <- renderPrint({
-    C <- sapply(1:K(), function(i) {input[[paste0("cols",i)]]})
+    C <- vapply(1:K(),
+                function(i) {input[[paste0("cols",i)]]},
+                character(1))
     summary(M()[[1]][, C])
   })
 
