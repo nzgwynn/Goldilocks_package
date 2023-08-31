@@ -2,13 +2,13 @@
 #' @import ggplot2
 NULL
 
-#' This function takes the ui and server from `{goldilocks_app}`
+#' This function takes the ui and server from `{goldilocksTwoArm}`
 #' and runs it locally.
 #'
 #' @export
 #' @examples
-#'  \dontrun{goldilocks_app()}
-goldilocks_app <- function(){
+#'  \dontrun{goldilocksTwoArm()}
+goldilocksTwoArm <- function(){
   shiny::shinyApp(ui = ui(),
          server = server,
          enableBookmarking = "url")

@@ -252,7 +252,7 @@ server <- function(input, output, session){
       ## case we don't have write permissions to the current working dir (which
       ## can happen when deployed).
       tempReport1 <- file.path(tempdir(), "report1.Rmd")
-      file.copy(system.file("reports/report1.Rmd", package = "goldilocks_app"),
+      file.copy(system.file("reports/report1.Rmd", package = "goldilocksTwoArm"),
                 tempReport1, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document
@@ -291,7 +291,7 @@ server <- function(input, output, session){
       ## can happen when deployed).
       tempReport <- file.path(tempdir(), "report.Rmd")
       file.copy(system.file("reports/report.Rmd",
-                            package = "goldilocks_app"),
+                            package = "goldilocksTwoArm"),
                 tempReport, overwrite = TRUE)
 
       # Set up parameters to pass to Rmd document

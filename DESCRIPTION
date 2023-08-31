@@ -1,9 +1,9 @@
-Package: goldilocks_app
+Package: goldilocksTwoArm
 Title: Randomize cluster trials with confidence
 Version: 0.0.0.9000
 Authors@R: person(given = "gwynn", family = "gebeyehu", email = "nzgwynn@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1185-8446"))
-Description: The Goldilocks App package implements the theoretical permutation
+Description: The goldilocksTwoArm package implements the theoretical permutation
     approach developed in this article is an interactive Shiny application. 
     This package allows researchers to randomize cluster randomized trials with 
     confidence by visualizing the distribution of average differences in the 
@@ -11,8 +11,8 @@ Description: The Goldilocks App package implements the theoretical permutation
     allows researchers to randomize a trial and download the resultant 
     randomizations. The Goldilocks application is deployed on the web put some 
     researchers may prefer an R package.
-URL: https://github.com/nzgwynn/goldilocks_app, https://www.sciencedirect.com/science/article/pii/S245186542100048X, https://bit.ly/GoldilocksApp
-BugReports: https://github.com/nzgwynn/goldilocks_app/issues
+URL: https://github.com/nzgwynn/goldilocksTwoArm, https://www.sciencedirect.com/science/article/pii/S245186542100048X, https://bit.ly/GoldilocksApp
+BugReports: https://github.com/nzgwynn/goldilocksTwoArm/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
