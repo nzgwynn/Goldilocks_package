@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "goldilocks",
-  "description": "The Goldilocks package implements the theoretical permutation approach developed in this article is an interactive Shiny application. This package allows researchers to randomize cluster randomized trials with confidence by visualizing the distribution of average differences in the treatment and control arms in practice randomizations. The application also allows researchers to randomize a trial and download the resultant randomizations. The Goldilocks application is deployed on the web put some researchers may prefer an R package.",
+  "description": "The Goldilocks package implements the theoretical permutation approach developed in this article is an interactive Shiny application. This package allows researchers to randomize cluster randomized trials with confidence by visualizing the distribution of average differences in the treatment and control arms in practice randomizations. The application allows researchers to randomize a trial and download the resultant randomizations. The Goldilocks application is deployed on the web put some researchers may prefer an R package.",
   "name": "goldilocks: What the Package Does (One Line, Title Case)",
   "relatedLink": "https://www.sciencedirect.com/science/article/pii/S245186542100048X",
   "codeRepository": "https://github.com/nzgwynn/Goldilocks_package",
