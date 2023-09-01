@@ -66,7 +66,7 @@ make.plot <- function(data, I){
 
   # Adding a border
   p <- p + theme(panel.border = element_rect(colour = "darkgrey",
-                                             fill=NA, size=0.5))
+                                             fill=NA, linewidth=0.5))
 
   # Calculate label positions for each veritcal bar
   lab_x <- rep(1:(N), times = 2) # 2 times, 1 for min 1 for max

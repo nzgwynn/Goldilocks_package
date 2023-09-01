@@ -69,11 +69,13 @@ make.Ks <- function(M, vars, D, ToC, S){
   t_max <- 60*5
   solver <- S
   approximate <- 0
-  solver <- list(name = "glpk", t_max = t_max, approximate = approximate,
+  solver <- list(name = "glpk", t_max = t_max,
+                 approximate = approximate,
                 round_cplex = 0, trace_cplex = 0)
 
   ## Solving
-  out <- designmatch::nmatch(dist_mat = dist_mat, total_pairs = floor(N/2),
+  out <- designmatch::nmatch(dist_mat = dist_mat,
+                             total_pairs = floor(N/2),
                             solver = solver, subset_weight = NULL)
 
   # These guys have the row numbers of the matched pairs

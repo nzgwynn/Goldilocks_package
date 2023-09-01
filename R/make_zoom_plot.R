@@ -77,7 +77,7 @@ make.zoom.plot <- function(data, I, Min, Max){
 
   # Adding a border
   p <- p + theme(panel.border = element_rect(colour = "darkgrey",
-                                             fill=NA, size=0.5))
+                                             fill=NA, linewidth=0.5))
 
   ## Updating N for the number of columns in the zoom graph
   ## So that the labels are right and don't force the graph

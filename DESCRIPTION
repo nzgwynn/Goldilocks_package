@@ -25,7 +25,8 @@ Imports:
     readxl,
     rmarkdown,
     shiny,
-    stats
+    stats,
+    Rglpk
 Suggests: 
     testthat (>= 3.0.0),
     grid,
