@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(goldilocks)
+library(goldilocksTwoArm)
 
-test_check("goldilocks")
+test_check("goldilocksTwoArm")
