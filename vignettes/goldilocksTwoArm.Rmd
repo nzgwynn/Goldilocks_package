@@ -1,5 +1,5 @@
 ---
-title: "goldilocks"
+title: "goldilocksTwoArm"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{goldilocks}
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(goldilocks)
+library(goldilocksTwoArm)
 ```
 
 Randomized controlled trials are considered the gold standard for testing an intervention. Instead of randomizing at the individual level, some trials need to randomize at the group level. For example, nursing homes, emergency rooms, or educational interventions need interventions for the whole institution. Although these group randomized trials (GRT) may have a large number of participants, they have a smaller number of units to randomize so ensuring balance in treatment and intervention arm is important. `{goldilocks}` allows researchers to practice randomizing GRT so that randomizations can occur with confidence. `{goldilocks}` contains the following panels:
